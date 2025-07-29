@@ -1,0 +1,22 @@
+{
+    "name": "arman/backend",
+    "authors": [
+        {
+            "name": "Armando",
+            "email": "452@cifpceuta.es"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    },
+    "require": {
+        "google/apiclient": "^2.18",
+        "symfony/security-csrf": "^6.0",
+        "respect/validation": "^2.2",
+        "vlucas/phpdotenv": "^5.6",
+        "phpmailer/phpmailer": "^6.10"
+    }
+}
