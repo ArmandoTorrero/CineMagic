@@ -1,6 +1,11 @@
 <?php 
-
     session_start(); 
+
+    // CORS para permitir llamadas desde React
+    header("Access-Control-Allow-Origin: http://localhost:5173");
+    header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
     require_once __DIR__ . '/../vendor/autoload.php'; 
 
     use Dotenv\Dotenv;
@@ -15,6 +20,9 @@
 
     // instanciamos la clase router
     $router = new Router(); 
+
+    // RUTAS QUE MANDAN JSON_ENCODE
+    $router->add('/usuarios', 'UserController@getAll'); 
 
     $requestURI = isset($_GET['url']) ? '/' . trim($_GET['url'], '/') : '/';
     $router->dispatch($requestURI)

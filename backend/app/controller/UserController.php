@@ -25,8 +25,20 @@
             $this->mailService = new EmailService();
         }
 
-        
+        public function getAll() {
 
+            // Validamos el metodo HTTP
+            Validador::validarMetodoHTTP('GET'); 
+
+            $users = $this->userModel->getAll();
+
+            if (!$users){
+                RespuestaJSON::error('Error al enviar los usuarios'); 
+                return; 
+            }
+
+            RespuestaJSON::exito('Exito', $users); 
+        }
     }
 
 ?>
