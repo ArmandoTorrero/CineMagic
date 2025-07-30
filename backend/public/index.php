@@ -23,6 +23,9 @@
 
     // RUTAS QUE MANDAN JSON_ENCODE
     $router->add('/usuarios', 'UserController@getAll'); 
+    $router->add('/validarLogin', 'UserController@validarLogin');
+    $router->add('/validarRegistro', 'UserController@validarRegistro');
+    $router->add('/cerrarSesion', 'UserController@cerrarSesion');
 
     $requestURI = isset($_GET['url']) ? '/' . trim($_GET['url'], '/') : '/';
     $router->dispatch($requestURI)

@@ -1,6 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *, *::after, *::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root{
+    --logo:'Anton'; 
+    --titulos: 'Bebas Neue';
+    --texto: 'Montserrat'; 
+    --background: #0f172a;          /* hsl(222.2 84% 4.9%) */
+    --foreground: #f8fafc;          /* hsl(210 40% 98%) */
+    --primary: #f8fafc;             /* hsl(210 40% 98%) */
+    --primary-foreground: #1e293b;   /* hsl(222.2 47.4% 11.2%) */
+    --secondary: #1e293b;           /* hsl(217.2 32.6% 17.5%) */
+    --secondary-foreground: #f8fafc; /* hsl(210 40% 98%) */
+    --muted: #1e293b;               /* hsl(217.2 32.6% 17.5%) */
+    --muted-foreground: #94a3b8;     /* hsl(215 20.2% 65.1%) */
+    --accent: #1e293b;              /* hsl(217.2 32.6% 17.5%) */
+    --accent-foreground: #f8fafc;    /* hsl(210 40% 98%) */
+    --destructive: #7f1d1d;          /* hsl(0 62.8% 30.6%) */
+    --destructive-foreground: #f8fafc; /* hsl(210 40% 98%) */
+    --border: #1e293b;              /* hsl(217.2 32.6% 17.5%) */
+    --input: #1e293b;               /* hsl(217.2 32.6% 17.5%) */
+    --ring: #cbd5e1;                /* hsl(212.7 26.8% 83.9%) */
+
+}
+
+
+
+body{
+    width: 100%;
+}
+
+.column-center{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.bg-img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.half-visibility{
+    opacity: .75;
+}
+
+.noVisible{
+    opacity: 0;
+}
+
+.visible{
+     opacity: 1;
+}
+
+.display-none{
+    display: none;
+}
+
+.disabled{
+    background-color: rgb(36, 98, 235, 0.5);
+}
+
+a{
+    text-decoration: none;
 }
 

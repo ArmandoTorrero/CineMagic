@@ -1,37 +1,32 @@
-import React, { useState, useEffect } from 'react'
-import { fetchData } from '../components/fetchData';
+import React, { useState, useEffect } from "react";
+import { fetchData } from "../services/fetchData";
 
 function Peliculas() {
+  const [users, setUsers] = useState([]);
 
-  const [users, setUsers] = useState([]); 
-
-  const url = `${import.meta.env.VITE_API_BACKEND_BASE_URL}usuarios`; 
+  const url = `${import.meta.env.VITE_API_BACKEND_BASE_URL}usuarios`;
 
   useEffect(() => {
-    
-    fetchData(url).then((result) => {
-      console.log(result);
-      setUsers(result.datos)
-      
-    }).catch((err) => {
-      console.error(err);
-      
-    });
-  
-    
-  }, [url])
-  
+    fetchData(url)
+      .then((result) => {
+        console.log(result);
+        setUsers(result.datos);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [url]);
 
   return (
     <section className="users">
-      {users.map(user => (
+      {users.map((user) => (
         <article className="user" key={user.id}>
           <h1> {user.nombre} </h1>
           <p> {user.email} </p>
         </article>
       ))}
     </section>
-  )
+  );
 }
 
-export default Peliculas
+export default Peliculas;
