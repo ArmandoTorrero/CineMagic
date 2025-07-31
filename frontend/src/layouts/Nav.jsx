@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+
+    <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand">
-          CineMagic 
-        </a>
+        <NavLink to={'/'} target="_self" className="navbar-brand">
+          <i className="fa-solid fa-film"></i> CineMagic 
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,7 +25,7 @@ function Nav() {
 
           <div className="navbar-nav">
 
-            <NavLink to={'/'} className="nav-link active" aria-current="page">Inicio</NavLink>
+            <NavLink to={'/login'} className="nav-link active" aria-current="page"><span className="login">Iniciar sesión</span></NavLink>
             <NavLink to={'/peliculas'} className="nav-link">Peliculas</NavLink>
             <NavLink to={'/snacks'} className="nav-link">Snacks</NavLink>
 

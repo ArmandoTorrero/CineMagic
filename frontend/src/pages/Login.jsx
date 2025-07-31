@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
-import Label from '../components/Label'
-import Input from '../components/Input'
-import Span from '../components/Span'
-import Button from '../components/Button'
+import Label from './../components/Label.jsx'
+import Input from './../components/Input.jsx'
+import Span from './../components/Span.jsx'
+import Button from './../components/Button.jsx'
 import { NavLink } from 'react-router-dom'
 import './../styles/login.css'
 
 function Login() {
 
     const [disabled, setDisabled] = useState(true)
+
+    const handleDisabled = () => {
+        setDisabled(!disabled)
+    }
 
 
   return (
@@ -22,7 +26,7 @@ function Login() {
         <form action="#" method="post">
 
             <article className="label-input">
-                <Label htmlfor={'email'}>Email</Label>
+                <Label htmlfor={'email'}>Correo electrónico</Label>
                 <Input type={'email'} name={'email'} placeholder={'tu@email.com'} />
                 <Span className={'noVisible'}>El formato no es correcto</Span>
             </article>
@@ -34,7 +38,7 @@ function Login() {
             </article>
 
 
-            <Button type={'submit'} className={'enviar'} isDisabled={disabled}>Iniciar sesión</Button>
+            <Button type={'button'} className={`enviar ${disabled ? "disabled" : ''}`} isDisabled={disabled}>Iniciar sesión</Button>
             
         </form>
 
@@ -43,7 +47,7 @@ function Login() {
         </article>
 
         <NavLink to={'/registro'} target="_self" className="registrate">¿No tienes una cuenta? <strong>Crea una aqui</strong></NavLink>
-        <NavLink to={'/'} target="_self" className="volver-inicio">Volver al inicio</NavLink>
+        <NavLink to={'/'} target="_self" className="volver-inicio"><i className="fa-solid fa-arrow-left"></i>Volver al inicio</NavLink>
 
     </section>
   )

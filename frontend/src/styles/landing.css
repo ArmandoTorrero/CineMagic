@@ -1,0 +1,303 @@
+p{
+    color: #cad4dc;
+}
+
+
+.hero{
+    gap: 10px;
+    width: 100%;
+    background-color: #11182a;
+}
+
+.hero h1{
+    color: var(--primary);
+    font-size: 3.3rem;
+
+    strong{
+        font-weight: 550;
+        color: #f59f0a;
+    }
+}
+
+.hero p{
+    color:#cad4dc;
+    font-size: 1.15rem;
+}
+
+.enlaces{
+    max-width: 350px;
+    gap: 15px;
+    
+    a{
+        flex-grow: 1;
+        padding: 7.5px 0px;
+        border-radius: 5px;
+        text-align: center;
+    }
+}
+
+.enlaces > a:first-of-type{
+    color: var(--color-gray-950);
+    font-weight: bold;
+}
+
+.enlaces > a:last-of-type{
+    color: #f59f0a;
+    border: 1px solid #f59f0a;
+    background-color: #fff;
+    font-weight: 550;
+}
+
+.enlaces i{
+    margin-right: 10px;
+}
+
+.como-funciona h1{
+    font-size: 2rem;
+    padding: 30px 0;
+}
+.como-funciona h1{
+    color: var(--primary);
+}
+
+.como-funciona h2{
+    color: #fefffe;
+}
+
+.como-funciona p{
+    color: #cad4dc;
+}
+
+.steps{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    gap: 0px;
+    padding: 15px 0;
+    border: 1px solid rgb(202, 212, 220,0.2);
+    border-radius: 5px;
+    background-color: #273345;
+    text-align: center;
+
+    h2{
+        font-size: 1.2rem;
+    }
+
+    p{
+        width: 90%;
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+.step >.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: rgb(245, 159, 10, 0.2);
+    
+    i{
+        color: #f59f0a;
+        font-size: 1.5rem;
+        align-self: center;
+    }
+}
+
+.info{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 10px;
+    background-color: #2d2c2e;
+    text-align: center;
+    
+    h3{
+        font-weight: bold;
+        font-size: 2rem;
+        color: #f59f0a;
+    }
+
+    p{
+        color: #cad4dc;
+    }
+}
+
+.info article{
+    width: 100%;
+    padding: 10px 0;
+}
+
+
+.peliculas h1, .peliculas h3{
+    color: var(--primary);
+}
+
+.peliculas p{
+    color: #cad4dc;
+}
+
+.peliculas .title{
+
+    padding: 25px 0;
+}
+
+.destacadas{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+
+.pelicula{
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.poster-img > img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.content{
+    background-color: #263446;
+    border-radius: 0px 0px 10px 10px;
+
+    p{
+        font-size: 0.9rem;
+    }
+
+    .puntuacion{
+        padding: 2.5px 5px;
+        border-radius: 5px;
+        background-color: #f59f0a;
+        font-size: 0.9rem;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 15px;
+
+        i{
+            margin-right: 2.5px;
+        }
+    }
+}
+
+.elegir-cine{
+    .title{
+        padding: 15px 0;
+    }
+}
+
+.izq-der{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.izquierda{
+    width: 100%;
+    gap: 10px;
+    max-width: 600px;
+}
+
+.motivo{   
+    
+    flex-grow: 1;
+    gap: 17.5px;
+    padding: 10px 0;
+
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: min-content;
+        padding: 10px 8px;
+        border-radius: 5px;
+        background-color: rgb(245, 159, 10, 0.2);
+
+        i{
+            color: #f59f0a;
+            font-size: 1.4rem;
+        }
+    }
+
+    .texto{
+
+        h3{
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        p{
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #cad4dc;
+        }
+    }
+}
+
+.derecha{
+    gap: 7.5px;
+    max-width: 600px;
+    height: min-content;
+    border-radius: 5px;
+}
+
+.derecha h1{
+    color: #fff;
+}
+
+.derecha ul{
+    margin: 0;
+    padding: 0;
+
+    color: #cad4dc;
+}
+
+.comenzar{
+    gap: 5px;
+    background-color: #121d2f;
+    border-bottom: 1px solid rgb(202, 212, 220, 0.2);
+
+    p{
+        color: #cad4dc;
+    }
+
+    a{
+        padding: 6.5px 32.5px;
+    }  
+}
+
+@media screen and (width > 1000px) {
+
+
+    .step{
+        flex-grow: 0;
+        width: 21%;
+    }
+
+    .info article{
+        width: 20%;
+    }
+}
+
+
+
+
+

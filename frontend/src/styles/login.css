@@ -1,6 +1,5 @@
 .content{
     padding: 10px;
-    background-color: var(--ring);
 }
 
 .container-login{
@@ -11,9 +10,9 @@
     margin: 20px auto;
     padding: 25px 20px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    background-color: #fffefe;
+    background-color: var(--colorTexto2);
     border-radius: 5px;
-    box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
 }
 
 .titulo-parrafo{
@@ -34,7 +33,7 @@
 .label-input{
     display: flex;
     flex-direction: column;
-    gap: 2.5px;
+    gap: 4px;
     
     
     label{
@@ -50,7 +49,7 @@
         font-size: .85rem;
 
         &::placeholder{
-            font-size: .75rem;
+            font-size: .8rem;
         }
 
         &:focus{
@@ -97,20 +96,20 @@
     font-weight: 500;
 }
 
-.disabled{
-    background-color: rgb(36, 98, 235, 0.5);
-}
 
 .registrate, .volver-inicio{
     padding: 5px 0;
     font-size: 0.8rem;
     text-align: center;
-
     color: var(--colorTexto);
 
         strong{
             font-weight: 500;
             color: var(--muted);
+        }
+
+        i{
+            margin-right: 3px;
         }
 }
 
@@ -130,6 +129,7 @@
         border: 1px solid rgba(0, 0, 0, 0.3);
         border-radius: 5px;
         color: var(--colorTexto);
+        background-color: #fff;
         font-size: 0.8rem;
         font-weight: 500;
         text-align: center;

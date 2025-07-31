@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import 'tailwindcss';  
+
 *, *::after, *::before{
     margin: 0;
     padding: 0;
@@ -25,14 +27,13 @@
     --border: #1e293b;              /* hsl(217.2 32.6% 17.5%) */
     --input: #1e293b;               /* hsl(217.2 32.6% 17.5%) */
     --ring: #cbd5e1;                /* hsl(212.7 26.8% 83.9%) */
+    --colorTexto: #010100;
+    --colortexto2: #fff;
 
 }
 
 
 
-body{
-    width: 100%;
-}
 
 .column-center{
     display: flex;
@@ -63,10 +64,113 @@ body{
 }
 
 .disabled{
-    background-color: rgb(36, 98, 235, 0.5);
+    background-color: rgb(30, 41, 59,0.5);
 }
 
 a{
     text-decoration: none;
+}
+
+
+/*
+--------------------------
+----------NAV -----------
+--------------------------
+*/
+
+.navbar{
+    padding: 15px 0;
+}
+
+
+span.login{
+    padding: 7.5px 10px;
+    border: 1px solid #f59f0a;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #f59f0a;
+}
+
+
+/*
+--------------------------
+----------FOOTER----------
+--------------------------
+*/
+
+footer{
+    padding: 15px 10px;
+    background: rgb(18, 27, 45);
+    background: linear-gradient(90deg, rgba(18, 27, 45,1) 0%, rgb(25, 34, 53,1) 100%);
+}
+
+.links{
+    gap: 10px;
+}
+
+.links section h1{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+footer {
+    h1,p,a,li{
+        color: var(--colortexto2);
+        padding: 5px 0;
+    }
+}
+
+footer p,a,li{
+    opacity: .9;
+}
+
+footer ul{
+    margin: 0;
+    padding: 0;    
+}
+
+hr{
+    height: 3px;
+    background-color: var(--colortexto2);
+}
+
+.derechos-RRSS {
+    
+    .derechos{
+        text-align: center;
+    }
+
+    .RRSS{
+        display: none;
+    }
+    
+}
+
+@media screen and (width >=1000px){
+    
+    footer .links{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    footer .section-1 p{
+        width: 70%;
+    }
+
+    .derechos-RRSS{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .RRSS{
+            display: flex;
+            gap: 10px;
+
+            i{
+                font-size: 1.3rem;
+            }
+        }
+    }
 }
 
