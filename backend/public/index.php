@@ -22,10 +22,11 @@
     $router = new Router(); 
 
     // RUTAS QUE MANDAN JSON_ENCODE
-    $router->add('/usuarios', 'UserController@getAll'); 
-    $router->add('/validarLogin', 'UserController@validarLogin');
-    $router->add('/validarRegistro', 'UserController@validarRegistro');
-    $router->add('/cerrarSesion', 'UserController@cerrarSesion');
+    $router->add('/usuario/hola', 'UserController@hola');
+    $router->add('/usuario/usuarios', 'UserController@getAll'); 
+    $router->add('/usuario/validarLogin', 'UserController@validarLogin');
+    $router->add('/usuario/validarRegistro', 'UserController@validarRegistro');
+    $router->add('/usuario/cerrarSesion', 'UserController@cerrarSesion');
 
     $requestURI = isset($_GET['url']) ? '/' . trim($_GET['url'], '/') : '/';
     $router->dispatch($requestURI)

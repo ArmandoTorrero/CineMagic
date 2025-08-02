@@ -170,11 +170,11 @@ function Landing() {
 
       </section>
 
-      <section className="elegir-cine py-5 bg-[#121d2f]">
+      <section className="elegir-cine bg-[#121d2f]">
 
-          <h1 className="title text-center text-white fw-bold">¿Por que elegir CineMagic?</h1>
+          <h1 className="title py-5 text-center text-white fw-bold">¿Por que elegir CineMagic?</h1>
 
-          <section className="izq-der px-4 py-5">
+          <section className="izq-der px-4 py-3">
 
             <article className="izquierda d-flex flex-row flex-wrap">
 
@@ -240,7 +240,7 @@ function Landing() {
 
       </section>
 
-      <section className="comenzar column-center py-4">
+      <section className="comenzar column-center p-5">
         <h1 className="text-white">¿Listo para comenzar?</h1>
         <p>Únete a miles de usuarios que ya disfrutan de CineMagic</p>
         <NavLink to={''} className="fw-bold text-black rounded-md bg-[#f59f0a]">Comenzar ahora</NavLink>

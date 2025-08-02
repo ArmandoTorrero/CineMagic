@@ -1,16 +1,13 @@
-.content{
-    padding: 10px;
-}
+
 
 .container-login{
     display: flex;
     flex-direction: column;
     width: 90%;
     max-width: 420px;    
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 25px 20px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    background-color: var(--colorTexto2);
     border-radius: 5px;
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.15);
 }
@@ -43,7 +40,7 @@
     
     input{
         padding: 8px 10px;
-        border: 1px solid rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.15);
         border-radius: 5px;
         font-family: var(--muted);
         font-size: .85rem;
@@ -109,10 +106,9 @@
         }
 
         i{
-            margin-right: 3px;
+            margin-right: 5px;
         }
 }
-
 
 .registrate{
     margin-top: 15px;

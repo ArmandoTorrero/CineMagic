@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { fetchData } from "../services/fetchData";
+import { BASE_URL } from "../config/config";
 
 function Peliculas() {
   const [users, setUsers] = useState([]);
 
-  const url = `${import.meta.env.VITE_API_BACKEND_BASE_URL}usuarios`;
+  const url = `${BASE_URL}usuario/usuarios`;
 
   useEffect(() => {
     fetchData(url)

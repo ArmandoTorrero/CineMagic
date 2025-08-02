@@ -101,7 +101,7 @@
                     <div style="padding: 30px;">
                         <p>Hola <strong>' . $nombre . '</strong>,</p>
                         
-                        <p>Has iniciado sesión exitosamente en tu cuenta de <strong>CampoLibre</strong>.</p>
+                        <p>Has iniciado sesión exitosamente en tu cuenta de <strong>CineMagic</strong>.</p>
                         
                         <div style="background-color: #f8f9fa; padding: 20px; border-left: 4px solid #28a745; margin: 20px 0;">
                             <h3 style="color: #28a745; margin-top: 0;">Detalles del acceso:</h3>
@@ -113,7 +113,7 @@
                         
                         <p>¿Qué puedes hacer ahora?</p>
                         <ul>
-                            <li>🏟️ Reservar pistas deportivas</li>
+                            <li>🏟️ Reservar horarios de peliculas</li>
                             <li>👤 Actualizar tu perfil</li>
                             <li>📋 Ver tu historial de reservas</li>
                         </ul>
@@ -122,11 +122,11 @@
                             <p style="margin: 0; color: #0c5460;"><strong>💡 Consejo:</strong> Si no fuiste tú quien inició sesión, por favor cambia tu contraseña inmediatamente por seguridad.</p>
                         </div>
                         
-                        <p>¡Disfruta de tu tiempo en CampoLibre!</p>
+                        <p>¡Disfruta de tu tiempo en CineMagic!</p>
                         
                         <p style="margin-top: 30px;">
                             Saludos,<br>
-                            <strong>El equipo de CampoLibre</strong>
+                            <strong>El equipo de CineMagic</strong>
                         </p>
                     </div>
                     

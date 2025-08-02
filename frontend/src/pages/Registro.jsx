@@ -5,11 +5,15 @@ import Span from './../components/Span.jsx'
 import Button from './../components/Button.jsx'
 import { NavLink } from 'react-router-dom'
 import './../styles/login.css'
+import { initForm } from '../services/initForm.js'
 
 function Registro() {
 
-  const [disabled, setDisabled] = useState(true)
-
+    const handleSubmit = async(ev) => {
+        ev.preventDefault(); 
+        initForm(ev.target, "usuario/validarRegistro")
+        
+    }
 
   return (
     <section className="container-login">
@@ -19,11 +23,11 @@ function Registro() {
             <p>Registrate para comenzar a disfrutar del cine</p>
         </article>
 
-        <form action="#" method="post">
+        <form action="#" method="post" onSubmit={handleSubmit}>
 
             <article className="label-input">
-                <Label htmlfor={'name'}>Nombre de usuario</Label>
-                <Input type={'text'} name={'name'} placeholder={'Tu nombre'} />
+                <Label htmlfor={'nombre'}>Nombre de usuario</Label>
+                <Input type={'text'} name={'nombre'} placeholder={'Tu nombre'} />
                 <Span className={'noVisible'}>El formato no es correcto</Span>
             </article>
 
@@ -46,7 +50,7 @@ function Registro() {
             </article>
 
 
-            <Button type={'button'} className={`enviar ${disabled ? "disabled" : ''}`} isDisabled={disabled}>Crear cuenta</Button>
+            <Button type={'submit'} className={`enviar`} isDisabled={false}>Crear cuenta</Button>
             
         </form>
 
@@ -54,7 +58,7 @@ function Registro() {
             <NavLink to={'/'} target="_self"><i className="fa-brands fa-google" ></i> Google</NavLink>
         </article>
 
-        <NavLink to={'/registro'} target="_self" className="registrate">¿Ya tienes una cuenta? <strong>Inicia sesión</strong></NavLink>
+        <NavLink to={'/login'} target="_self" className="registrate">¿Ya tienes una cuenta? <strong>Inicia sesión</strong></NavLink>
         <NavLink to={'/'} target="_self" className="volver-inicio"><i className="fa-solid fa-arrow-left"></i>Volver al inicio</NavLink>
 
     </section>
