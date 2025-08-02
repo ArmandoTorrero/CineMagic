@@ -174,6 +174,7 @@ class Validador
     {
         foreach ($array_usuarios as $usuario) {
             if ($usuario['email'] == $correo && password_verify($password, $usuario['passwd'])) {
+                http_response_code(200); 
                 Sessions::crearSesionLogueado();
                 Sessions::crearSesionIdUsuario($usuario['id']);
                 Sessions::crearSesionUsername($usuario['nombre']);

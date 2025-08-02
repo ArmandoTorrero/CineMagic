@@ -41,6 +41,8 @@
         }
 
         public function validarLogin() {
+
+            header('Content-Type: application/json');
             
             Validador::validarMetodoHTTP('POST'); 
 
@@ -72,23 +74,23 @@
 
                 // Si no encuentra la cuenta se lo indicamos al usuario y termina el programa
                 if (!$user) {
+                    http_response_code(401); 
                     RespuestaJSON::error($mensaje);
                     return; 
                 }
 
                 
                 // si encuentra el usuario comprobamos si es admin o usuario corriente 
-                // $redirect = $_SESSION["rol"] !== 2 ? '/' : '/';
+                $redirect = $_SESSION["rol"] !== 2 ? '/' : '/';
 
                 //$this->mailService->enviarBienvenidaLogin($_POST["email"], $_SESSION["nombre_usuario"]);
 
                 // Indicamos al JS que tooo ha ido con exito
-                RespuestaJSON::exito($mensaje, null); 
+                RespuestaJSON::exito($mensaje, null, $redirect); 
 
-            } catch (ValidationException $e) {
-                // Devuelve todos los mensajes de error en un array simple
-                $errores = $e->getMessage();
-                RespuestaJSON::error("Errores de validación", $errores);
+            } catch (Exception $e) {
+                http_response_code(500); 
+                RespuestaJSON::error("Error en el servidor", $e->getMessage());
             }
         }
 
@@ -153,6 +155,94 @@
             }
         }
 
+        /**
+         * MÉTODO PARA INICIAR EL PROCESO DE GOOGLE LOGIN
+         * @return void
+         */
+        public function googleLogin() {
+            
+            $this->googleAuth->redirectToGoogle();
+        }
+
+        /**
+         * MÉTODO CALLBACK QUE RECIBE LA RESPUESTA DE GOOGLE
+         * @return void
+         */
+        public function googleCallback() {
+         
+            if (!isset($_GET["code"])) {
+                RespuestaJSON::error("Error en la autenticación");
+                return;  
+            }
+
+             try {
+                
+                $userData = $this->googleAuth->handleCallback($_GET['code']);
+                $this->procesarGoogleUser($userData);
+                
+            } catch (Exception $e) {
+                RespuestaJSON::error('Error: ' . $e->getMessage());
+            }
+
+        }
+
+        /**
+         * MÉTODO PARA PROCESAR EL USUARIO DE GOOGLE
+         * @param mixed $googleUser
+         * @return void
+         */
+        public function procesarGoogleUser($googleUser) {
+
+            $email = $googleUser['email'];
+            $nombre = $googleUser['name'] ?? $googleUser['given_name'] ?? 'Usuario';
+            
+            // Verificar si el usuario ya existe
+            $usuarioExistente = $this->userModel->getByEmail($email);
+            
+            if ($usuarioExistente) {
+                // Usuario existe - crear sesión como en validarLogin()
+                Sessions::crearSesionLogueado();
+                Sessions::crearSesionUsername($usuarioExistente['nombre']);
+                Sessions::crearSesionEmail($usuarioExistente['email']);
+                Sessions::crearSesionIdUsuario($usuarioExistente['id']);
+                Sessions::crearSesionRol($usuarioExistente['rol_id']);  
+                
+                $redirect = $usuarioExistente['rol_id'] !== 2 ? 'http://localhost:5173/' : 'http://localhost:5173/';
+                
+            } else {
+                // Usuario no existe - registrarlo como en validarRegistro()
+                $nuevoUsuarioId = $this->userModel->create([
+                    'nombre' => $nombre,
+                    'email' => $email,
+                    'passwd' => password_hash(uniqid(), PASSWORD_DEFAULT), // Password aleatoria para usuarios de Google
+                    'tlf' => '', // Campo vacío para usuarios de Google
+                    'codigo_militar' => '',
+                    'rol_id' => 1
+                ]);
+                
+                // Crear sesión para el nuevo usuario
+                Sessions::crearSesionLogueado();
+                Sessions::crearSesionUsername($nombre);
+                Sessions::crearSesionEmail($email); 
+                Sessions::crearSesionIdUsuario($nuevoUsuarioId);
+                $_SESSION["rol"] = 1;
+                
+                $redirect = 'http://localhost:5173/';
+            }
+
+            // enviar correo de bienvenida
+            try {
+                $this->mailService->enviarBienvenidaGoogle($email, $nombre);
+            } catch (Exception $e) {
+                error_log("Error enviando email de Google: " . $e->getMessage());
+            }
+            
+            // Redirigir según el rol del usuario
+            header('Location: ' . $redirect);
+            exit;
+        }
+
     }
 
 ?>
+

@@ -15,7 +15,7 @@
 
             $this->clientId = $_ENV['CLIENT_ID'];
             $this->clientSecret = $_ENV['CLIENT_SECRET'];
-            $this->redirectUri = 'http://localhost/CampoLibre/public/googleCallback';
+            $this->redirectUri = 'http://localhost/Cine/backend/public/usuario/googleCallback';
 
             $this->initializeClient(); 
         }

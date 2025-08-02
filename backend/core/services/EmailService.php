@@ -28,7 +28,7 @@
             $this->mail->Port = 587;
             
             // Configuración adicional
-            $this->mail->setFrom('armando.torrero.05@gmail.com', 'CampoLibre');
+            $this->mail->setFrom('armando.torrero.05@gmail.com', 'CineMagic');
             $this->mail->isHTML(true);
             $this->mail->CharSet = 'UTF-8';
         }
@@ -65,7 +65,7 @@
         public function enviarBienvenidaRegistro($email, $nombre) {
             $plantilla = '
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                    <h1 style="color: #4CAF50;">¡Bienvenido a CampoLibre!</h1>
+                    <h1 style="color: #4CAF50;">¡Bienvenido a CineMagic!</h1>
                     <p>Hola <strong>' . $nombre . '</strong>,</p>
                     <p>Tu cuenta ha sido creada exitosamente. Ya puedes comenzar a disfrutar de todos nuestros servicios.</p>
                     <p>Datos de tu cuenta:</p>
@@ -79,7 +79,7 @@
                 </div>
             ';
             
-            return $this->enviarCorreo($email, '¡Bienvenido a CampoLibre!', $plantilla);
+            return $this->enviarCorreo($email, '¡Bienvenido a CineMagic!', $plantilla);
         }
 
         /**
@@ -136,7 +136,7 @@
                 </div>
             ';
             
-            return $this->enviarCorreo($email, 'Sesión iniciada en CampoLibre - ' . $fechaActual, $plantilla);
+            return $this->enviarCorreo($email, 'Sesión iniciada en CineMagic - ' . $fechaActual, $plantilla);
         }
 
         /**
@@ -163,7 +163,7 @@
                 </div>
             ';
             
-            return $this->enviarCorreo($email, 'Acceso con Google - CampoLibre', $plantilla);
+            return $this->enviarCorreo($email, 'Acceso con Google - CineMagic', $plantilla);
         }
 
         /**

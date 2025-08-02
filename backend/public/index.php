@@ -27,6 +27,8 @@
     $router->add('/usuario/validarLogin', 'UserController@validarLogin');
     $router->add('/usuario/validarRegistro', 'UserController@validarRegistro');
     $router->add('/usuario/cerrarSesion', 'UserController@cerrarSesion');
+    $router->add('/usuario/googleLogin', 'UserController@googleLogin'); 
+    $router->add('/usuario/googleCallback', 'UserController@googleCallback');
 
     $requestURI = isset($_GET['url']) ? '/' . trim($_GET['url'], '/') : '/';
     $router->dispatch($requestURI)
