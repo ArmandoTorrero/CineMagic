@@ -1,0 +1,25 @@
+main{
+    background-color: #11182a;
+}
+
+.titulo-descripcion{
+
+    h1{
+        font-size: 2.9rem;
+
+    }
+
+    p{
+        font-size: 1.2rem;
+    }
+}
+
+.peliculas-container{
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 30px 10px;
+
+
+}

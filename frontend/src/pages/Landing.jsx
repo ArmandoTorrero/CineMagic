@@ -3,26 +3,26 @@ import { useEffect } from "react";
 import { fetchData } from "../services/fetchData";
 import { NavLink } from "react-router-dom";
 import "./../styles/landing.css"
+import MovieCard from "../components/MovieCard";
 
 
 function Landing() {
   let [peliculas, setPeliculas] = useState([]);
 
-  const api_key = import.meta.env.VITE_API_TMDB;
+  const api_key = import.meta.env.VITE_API_KEY_TMDB;
 
   useEffect(() => {
     fetchData(
       `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=es-ES`
     )
       .then((result) => {
-        setPeliculas(result.results.slice(0, 3));        
+        setPeliculas(result.results.slice(0, 3));            
       })
       .catch((err) => {
         console.error(err);
       });
   }, [api_key]);
 
-  if (peliculas.length === 0) return <p>No hay peliculas</p>;
 
   return (
     
@@ -101,20 +101,17 @@ function Landing() {
 
         <section className="destacadas px-4">
 
-          {peliculas.map((pelicula) => (
-
-            <article className="pelicula" key={pelicula.id}>
+          {
+            peliculas.length === 0 
+            ? 
+            <h2>No hay peliculas</h2>
+            : 
+            peliculas.map(pelicula => (
               
-              <div className="poster-img"><img src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt="" /></div>
-
-              <div className="content p-3">
-                <h3 className="fs-5 fw-bold"> {pelicula.title} </h3>
-                <p> {pelicula.overview} </p>
-                <span className="puntuacion"><i className="fa-solid fa-star"></i>8.5</span>
-              </div>
-
-            </article>
-          ))}
+              <MovieCard key={pelicula.id} pelicula={pelicula} />
+              
+            ))           
+          }
 
         </section>
       </section>
