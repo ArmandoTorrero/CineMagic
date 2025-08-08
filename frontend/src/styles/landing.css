@@ -160,49 +160,6 @@ p{
     gap: 30px;
 }
 
-.pelicula{
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-}
-
-.poster-img > img{
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-}
-
-.content{
-    background-color: #263446;
-    border-radius: 0px 0px 10px 10px;
-
-    p{
-        font-size: 0.8rem;
-    }
-
-    a{
-        padding: 7.5px 30px;
-        border-radius: 5px;
-        background-color: #f59f0a;
-        color: var(--colorTexto);
-        font-size: 0.8rem;
-        font-weight: bold;
-    }
-
-    .puntuacion{
-        padding: 2.5px 5px;
-        border-radius: 5px;
-        background-color: #f59f0a;
-        font-size: 0.9rem;
-        font-weight: bold;
-        position: absolute;
-        top: 20px;
-        right: 15px;
-
-        i{
-            margin-right: 2.5px;
-        }
-    }
-}
 
 .elegir-cine{
     .title{

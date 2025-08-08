@@ -1,0 +1,47 @@
+
+.snack{
+    flex-grow: 1;
+    width: 400px;
+    border: 1px solid rgb(202, 212, 220, 0.3);
+    border-radius: 5px;
+}
+
+.snackImage{
+    height: 175px;
+    border-radius: 5px 5px 0 0;
+    background-image: url('./../../../../../public/patatas.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content{
+    border-radius: 0px 0px 5px 5px;
+}
+
+.descripcion{
+    color: #cad4dc;
+}
+
+.button{
+    padding: 2.5px 7.5px;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 0.9rem;
+}
+
+.categoria, .precio{
+    padding: 5px 12.5px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.categoria{
+    background-color: blue;
+}
+
+.precio{
+    color: black;
+    background-color: #f59f0a;
+}

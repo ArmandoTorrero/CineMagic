@@ -8,6 +8,7 @@ import Footer from "./../layouts/Footer.jsx";
 import Login from "./../pages/Login.jsx";
 import Registro from "./../pages/Registro.jsx"; 
 import Pelicula from "./../pages/Pelicula.jsx";
+import Payment from "./../pages/Payment.jsx";
 
 function Rutas() {
   return (
@@ -23,6 +24,7 @@ function Rutas() {
           <Route path="/peliculas" element={<Peliculas />}></Route>
           <Route path="/pelicula/:id" element={<Pelicula />}></Route>
           <Route path="/snacks" element={<Snacks />}></Route>
+          <Route path="/payment" element={<Payment />}></Route>          
 
         </Routes>
 

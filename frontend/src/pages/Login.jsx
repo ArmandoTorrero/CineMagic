@@ -40,7 +40,7 @@ function Login() {
     
     <main className='py-3'>
 
-        <section className="container-login">
+        <section className="container-login bg-[#fefefe]">
 
             <article className="titulo-parrafo column-center">
                 <h1>Iniciar sesión</h1>

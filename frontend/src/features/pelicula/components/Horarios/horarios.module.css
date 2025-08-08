@@ -1,0 +1,17 @@
+.horarios {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 15px;
+
+  .horarioButton {
+    flex-grow: 1;
+    padding: 7.5px;
+    border-radius: 5px;
+    background-color: var(--primary);
+  }
+
+  .selected {
+    background-color: #f59f0a;
+  }
+}

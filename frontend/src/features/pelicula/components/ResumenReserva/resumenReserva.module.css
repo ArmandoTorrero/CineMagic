@@ -1,0 +1,16 @@
+
+.contador{
+
+    button{
+        border-radius: 5px;
+    }
+}
+
+.continuar{
+    width: 100%;
+    margin-top: 7.5px;
+    padding: 7.5px 0;
+    border-radius: 5px;
+    background-color: #f59f0a;
+    font-weight: bold;
+}

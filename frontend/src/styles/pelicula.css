@@ -68,7 +68,7 @@
         color: var(--primary);
     }
 
-    .fecha, .horario{
+    .fecha, .horario-options{
 
         display: flex;
         flex-direction: column;
@@ -87,27 +87,6 @@
             color:#172133;
         }
     }
-
-    .horario{
-
-        .horarios{
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-around;
-            gap: 15px;
-            
-            .horario-button{
-                flex-grow: 1;
-                padding: 7.5px;
-                border-radius: 5px;
-                background-color: var(--primary);
-            }
-
-            .selected{
-                background-color: #f59f0a;
-            }
-        }
-    }
 }
 
 
@@ -117,26 +96,13 @@
     padding: 20px;
     border-radius: 5px;
     background-color: #1c2739;
-    border: 1px solid rgb(202, 212, 220, .3);
+    border: 1px solid rgba(202, 212, 220, .3);
     
     h1{
         color: var(--primary);
     }
 }
 
-
-.contador > button{
-    border-radius: 5px;
-}
-
-.continuar{
-    width: 100%;
-    margin-top: 7.5px;
-    padding: 7.5px 0;
-    border-radius: 5px;
-    background-color: #f59f0a;
-    font-weight: bold;
-}
 
 
 
