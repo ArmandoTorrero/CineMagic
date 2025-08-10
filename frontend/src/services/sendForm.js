@@ -6,7 +6,7 @@ export async function sendForm(form, ruta, options = {}) {
     throw new Error("Formulario o ruta no proporcionados");
   }
 
-  const method = form.getAttribute("method").toUpperCase() || "POST";
+  const method = form.getAttribute("method") || "POST";
   const formData = new FormData(form);
 
   try {

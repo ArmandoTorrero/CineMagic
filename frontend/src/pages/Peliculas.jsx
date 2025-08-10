@@ -21,7 +21,7 @@ function Peliculas() {
   }, [api_key]);
 
   return (
-    <main className="py-5">
+    <main className="peliculasMain  py-5">
       <section className="titulo-descripcion text-center py-3">
         <h1 className="text-white fw-bold">Películas en cartelera</h1>
         <p>Selecciona la película que quieras ver</p>

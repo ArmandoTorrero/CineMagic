@@ -30,6 +30,8 @@
     $router->add('/usuario/googleLogin', 'UserController@googleLogin'); 
     $router->add('/usuario/googleCallback', 'UserController@googleCallback');
 
+    $router->add('/reserva/validarReserva', 'ReservaController@validarReserva'); 
+
     $requestURI = isset($_GET['url']) ? '/' . trim($_GET['url'], '/') : '/';
     $router->dispatch($requestURI)
 

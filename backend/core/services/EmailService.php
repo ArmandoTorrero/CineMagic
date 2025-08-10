@@ -148,7 +148,7 @@
         public function enviarBienvenidaGoogle($email, $nombre) {
             $plantilla = '
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                    <h1 style="color: #4285F4;">¡Bienvenido a CampoLibre!</h1>
+                    <h1 style="color: #4285F4;">¡Bienvenido a CineMagic!</h1>
                     <p>Hola <strong>' . $nombre . '</strong>,</p>
                     <p>Has iniciado sesión exitosamente usando tu cuenta de Google.</p>
                     <p>Tu cuenta se ha vinculado automáticamente con los siguientes datos:</p>
@@ -175,10 +175,7 @@
          * @param string $nombrePista (opcional)
          * @return bool
          */
-        public function enviarConfirmacionReserva($email, $nombre, $fecha, $hora, $nombrePista = 'Pista deportiva') {
-            // Formatear la fecha para mostrarla más amigable
-            $fechaFormateada = date('d \d\e F \d\e Y', strtotime($fecha));
-            $horaFormateada = date('H:i', strtotime($hora));
+        public function enviarConfirmacionReserva($email, $nombre) {
             
             $plantilla = '
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
@@ -195,35 +192,19 @@
                             <h2 style="color: #2E7D32; margin-top: 0;">Detalles de tu reserva:</h2>
                             <table style="width: 100%; border-collapse: collapse;">
                                 <tr>
-                                    <td style="padding: 8px 0; font-weight: bold;">📍 Pista:</td>
-                                    <td style="padding: 8px 0;">' . $nombrePista . '</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px 0; font-weight: bold;">📅 Fecha:</td>
-                                    <td style="padding: 8px 0;">' . $fechaFormateada . '</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px 0; font-weight: bold;">🕐 Hora:</td>
-                                    <td style="padding: 8px 0;">' . $horaFormateada . '</td>
-                                </tr>
-                                <tr>
                                     <td style="padding: 8px 0; font-weight: bold;">👤 Reservado por:</td>
                                     <td style="padding: 8px 0;">' . $nombre . '</td>
                                 </tr>
                             </table>
                         </div>
                         
-                        <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 8px; margin: 20px 0;">
-                            <p style="margin: 0; color: #856404;"><strong>Importante:</strong> Por favor, llega 10 minutos antes de tu hora reservada. Recuerda traer tu equipamiento deportivo.</p>
-                        </div>
-                        
                         <p>Si necesitas cancelar o modificar tu reserva, por favor contacta con nosotros lo antes posible.</p>
                         
-                        <p>¡Nos vemos en la cancha!</p>
+                        <p>¡Nos vemos en la sala de cine!</p>
                         
                         <p style="margin-top: 30px;">
                             Saludos,<br>
-                            <strong>El equipo de CampoLibre</strong>
+                            <strong>El equipo de CineMagic</strong>
                         </p>
                     </div>
                     
@@ -233,7 +214,7 @@
                 </div>
             ';
             
-            return $this->enviarCorreo($email, 'Reserva confirmada - ' . $fechaFormateada . ' a las ' . $horaFormateada, $plantilla);
+            return $this->enviarCorreo($email, 'Reserva confirmada', $plantilla);
         }
     }
 ?>

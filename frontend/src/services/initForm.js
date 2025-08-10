@@ -4,8 +4,9 @@ import Swal from "sweetalert2";
 
 export function initForm(form, ruta) {
     
-    sendForm(form, ruta).then((result) => {                
-                
+    sendForm(form, ruta).then((result) => {     
+        console.log(result);
+                                   
         Swal.fire({
             title: result.mensaje,
             icon: result.exito ? "success" : "error"

@@ -63,7 +63,7 @@ function Snacks() {
 
   return (
 
-    <main className='py-4 px-3 flex flex-wrap justify-evenly gap-3'>
+    <main className='snacksMain py-4 px-3 flex flex-wrap justify-evenly gap-3'>
 
       <section className="snacksContainer w-full max-w-[900px] py-2">
 
